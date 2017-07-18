@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: 'update-aar.gradle'
 
 android {
     compileSdkVersion 26
@@ -30,3 +31,50 @@ dependencies {
     compile project(':submodule')
     compile project(':submodule2')
 }
+//task updateAAR  {
+//    doLast {
+////        eachLibsAAR()
+//        eachModuleAAR()
+//    }
+//}
+//
+
+
+//def eachModuleAAR(){
+//    def libPath= getRootProject().projectDir.getAbsolutePath()+"/libs/";
+//    println '\n' +libPath;
+//    println '\n' +getAllprojects();
+//    for (Project project : getRootProject().getAllprojects()) {
+//
+//        def projectModuleAARPath=project.buildDir.absolutePath+"/outputs/aar/";
+//        def dir = new File(projectModuleAARPath)
+//        if (!dir.exists()) continue
+//
+//        dir.eachFile { File file ->
+////            if (libsModuleAAR.name.contains(file.name)) {
+//                copy{
+//                    from file.absolutePath
+//                    into libPath
+////                }
+////                println '\n' + libsModuleAAR.name + ' Update SUCCESS!'
+//            }
+//        }
+//    }
+//}
+
+//def eachLibsAAR(){
+//    def libPath= getRootProject().projectDir.getAbsolutePath()+"/libs/";
+//    def libDir = new File(libPath)
+//    if (libDir.exists()){
+//        libDir.eachFile {
+//            eachModuleAAR(it)
+//        }
+//    }
+//}
+//task copyApks(type: Copy) {
+//    doLast {
+//        from('submodule/build/outputs/aar/submodule-release.aar')
+//        exclude '*unaligned*'
+//        into('libs')
+//    }
+//}

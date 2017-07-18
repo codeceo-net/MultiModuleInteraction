@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MultiModule.iml" filepath="$PROJECT_DIR$/MultiModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiModuleInteraction.iml" filepath="$PROJECT_DIR$/MultiModuleInteraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basemodule/basemodule.iml" filepath="$PROJECT_DIR$/basemodule/basemodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/interface/interface.iml" filepath="$PROJECT_DIR$/interface/interface.iml" />
