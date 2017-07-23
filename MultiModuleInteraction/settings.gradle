@@ -1,1 +1,3 @@
-include ':app', ':submodule', ':interface', ':submodule2', ':basemodule'
+apply from: 'setting_config.gradle'
+
+include ':app'
