@@ -20,6 +20,7 @@ def compile_submodule(Project projectModule){
     projectModule.dependencies{
         if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
             compile project(':submodule')
+            println
         } else {
             compile(name: 'submodule-release', ext: 'aar')
         }

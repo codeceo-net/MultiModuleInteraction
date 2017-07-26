@@ -4,6 +4,9 @@ apply from: rootProject.file('module.gradle')
 buildscript {
     repositories {
         jcenter()
+        flatDir {
+            dirs rootDir.getAbsolutePath()+'/libs'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -16,9 +19,16 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
+        flatDir {
+            dirs rootDir.getAbsolutePath()+'/libs'
+        }
     }
 }
 
+
+
 task clean(type: Delete) {
+    println "clean-----------"
     delete rootProject.buildDir
 }
