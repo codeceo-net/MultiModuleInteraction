@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
                startActivity(new Intent(MainActivity.this, SubModuleActivity.class));
             }
         });
-        Log.d("gaolei","1234567890-=");
+        Log.d("gaolei","111");
     }
 
     public void skipToSubModule2(View view) {
