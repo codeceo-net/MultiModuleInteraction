@@ -1,3 +1,4 @@
+
 def initModuleCompile() {
     Properties properties = new Properties();
     File file = new File(rootDir.getAbsolutePath() + "/module.properties")
@@ -16,15 +17,14 @@ initModuleCompile()
 
 
 
-def compile_submodule(Project projectModule){
-    projectModule.dependencies{
+def compile_submodule(){
+//    projectModule.dependencies{
         if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
             compile project(':submodule')
-            println
         } else {
             compile(name: 'submodule-release', ext: 'aar')
         }
-    }
+//    }
 }
 def compile_submodule2(Project projectModule){
     projectModule.dependencies{

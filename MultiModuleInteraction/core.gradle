@@ -19,6 +19,7 @@ ext {
             picasso              : 'com.squareup.picasso:picasso:2.5.2',
             retrofit2            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             appcompatV7          : "com.android.support:appcompat-v7:$supportLibrariesVersion",
+            andResGuardPlugin    : 'com.tencent.mm:AndResGuard-gradle-plugin:1.1.9',
 
             design    : "com.android.support:design:$supportLibrariesVersion",
             eventbus    : 'de.greenrobot:eventbus:3.0.0-beta1'

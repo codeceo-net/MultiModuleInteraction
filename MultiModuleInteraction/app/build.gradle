@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
-apply from: 'module.gradle'
+apply from: rootProject.file('module.gradle')
 apply from: 'update-aar.gradle'
+//apply plugin: 'AndResGuard'
 
 android {
     compileSdkVersion 26
@@ -22,7 +23,8 @@ android {
 }
 
 dependencies {
-    println "hello world"
+
+    println "dependencies"
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -36,8 +38,62 @@ dependencies {
     compile_interface(getProject())
 }
 
+//andResGuard {
+//    mappingFile = null
+//    use7zip = true
+//    useSign = true
+//    keepRoot = false
+//    whiteList = [
+//            //for your icon
+//            "R.drawable.ic_launcher",
+//            //for fabric
+//            "R.string.com.crashlytics.*",
+//            //for umeng update
+//            "R.string.umeng*",
+//            "R.string.UM*",
+//            "R.string.tb_*",
+//            "R.layout.umeng*",
+//            "R.layout.tb_*",
+//            "R.drawable.umeng*",
+//            "R.drawable.tb_*",
+//            "R.anim.umeng*",
+//            "R.color.umeng*",
+//            "R.color.tb_*",
+//            "R.style.*UM*",
+//            "R.style.umeng*",
+//            "R.id.umeng*",
+//            // for google-services.json
+//            "R.string.google_app_id",
+//            "R.string.gcm_defaultSenderId",
+//            "R.string.default_web_client_id",
+//            "R.string.ga_trackingId",
+//            "R.string.firebase_database_url",
+//            "R.string.google_api_key",
+//            "R.string.google_crash_reporting_api_key",
+//            //umeng share for sina
+//            "R.drawable.sina*",
+//
+//            //有抛异常说这个资源找不到，避免混淆
+//            "R.layout.fragment_menu"
+//    ]
+//    compressFilePattern = [
+//            "*.png",
+//            "*.jpg",
+//            "*.jpeg",
+//            "*.gif",
+//            "resources.arsc"
+//    ]
+//    sevenzip {
+////        artifact = 'com.tencent.mm:SevenZip:1.1.8'
+//        artifact = 'com.tencent.mm:SevenZip:1.1.9'
+//        //path = "D:\\Program Files\\7-Zip\\7z.exe"
+//    }
+//}
+
 
 def compile_submodule(Project projectModule){
+    println "compile_submodule-----------"
+
     projectModule.dependencies{
         if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
             compile project(':submodule')

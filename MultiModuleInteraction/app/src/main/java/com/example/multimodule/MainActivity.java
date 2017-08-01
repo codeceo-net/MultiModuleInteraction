@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getApplicationContext().startActivity(new Intent(MainActivity.this, SubModuleActivity.class));
+               startActivity(new Intent(MainActivity.this, SubModuleActivity.class));
             }
         });
     }
