@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
         });
         Log.d("gaolei","111");
         Log.d("gaolei","222");
+        Log.d("gaolei","333");
     }
 
     public void skipToSubModule2(View view) {
