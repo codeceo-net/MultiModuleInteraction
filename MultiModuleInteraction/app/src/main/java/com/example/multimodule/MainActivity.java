@@ -3,6 +3,7 @@ package com.example.multimodule;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,6 +27,7 @@ public class MainActivity extends Activity {
                startActivity(new Intent(MainActivity.this, SubModuleActivity.class));
             }
         });
+        Log.d("gaolei","1234567890-=");
     }
 
     public void skipToSubModule2(View view) {
