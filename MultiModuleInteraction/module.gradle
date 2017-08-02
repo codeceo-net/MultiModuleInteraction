@@ -13,18 +13,21 @@ def initModuleCompile() {
 
 initModuleCompile()
 
+ext{
+    compile_submodule = this.&compile_submodule
+    compile_submodule2 = this.&compile_submodule2
+    compile_interface = this.&compile_interface
+    compile_spacebase = this.&compile_spacebase
+}
 
-
-
-
-def compile_submodule(){
-//    projectModule.dependencies{
+def compile_submodule(Project projectModule){
+    projectModule.dependencies{
         if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
             compile project(':submodule')
         } else {
             compile(name: 'submodule-release', ext: 'aar')
         }
-//    }
+    }
 }
 def compile_submodule2(Project projectModule){
     projectModule.dependencies{

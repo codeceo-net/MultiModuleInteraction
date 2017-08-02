@@ -91,55 +91,54 @@ dependencies {
 //}
 
 
-def compile_submodule(Project projectModule){
-    println "compile_submodule-----------"
-
-    projectModule.dependencies{
-        if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
-            compile project(':submodule')
-            println "compile-----------submodule"
-        } else {
-            compile(name: 'submodule-release', ext: 'aar')
-            println "compile-----------submodule-release.aar"
-        }
-    }
-}
-def compile_submodule2(Project projectModule){
-    projectModule.dependencies{
-        if (isAllDebug.toBoolean() || isSubmodule2Debug.toBoolean()) {
-            compile project(':submodule2')
-        } else {
-            compile(name: 'submodule2-release', ext: 'aar')
-        }
-    }
-}
-def compile_interface(Project projectModule){
-    projectModule.dependencies{
-        if (isAllDebug.toBoolean() || isInterfaceDebug.toBoolean()) {
-            compile project(':interface')
-        } else {
-            compile(name: 'interface-release', ext: 'aar')
-        }
-    }
-}
-
-
-
-def compile_spacebase(Project projectModule){
-    projectModule.dependencies{
-        if (isAllDebug.toBoolean() || isBasemoduleDebug.toBoolean()) {
-            compile project(':basemodule')
-        } else {
-            compile(name: 'basemodule-release', ext: 'aar')
-//            compile_interface(getProject())
-//            compile dep.picasso
-//            compile dep.recyclerView
-//            compile dep.appcompatV7
-//            compile dep.supportAnnotations
-//            compile dep.design
-//            compile dep.eventbus
-
-        }
-    }
-
-}
+//def compile_submodule(Project projectModule){
+//    println "compile_submodule-----------"
+//
+//    projectModule.dependencies{
+//        if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
+//            compile project(':submodule')
+//            println "compile-----------submodule"
+//        } else {
+//            compile(name: 'submodule-release', ext: 'aar')
+//            println "compile-----------submodule-release.aar"
+//        }
+//    }
+//}
+//def compile_submodule2(Project projectModule){
+//    projectModule.dependencies{
+//        if (isAllDebug.toBoolean() || isSubmodule2Debug.toBoolean()) {
+//            compile project(':submodule2')
+//        } else {
+//            compile(name: 'submodule2-release', ext: 'aar')
+//        }
+//    }
+//}
+//def compile_interface(Project projectModule){
+//    projectModule.dependencies{
+//        if (isAllDebug.toBoolean() || isInterfaceDebug.toBoolean()) {
+//            compile project(':interface')
+//        } else {
+//            compile(name: 'interface-release', ext: 'aar')
+//        }
+//    }
+//}
+//
+//
+//
+//def compile_spacebase(Project projectModule){
+//    projectModule.dependencies{
+//        if (isAllDebug.toBoolean() || isBasemoduleDebug.toBoolean()) {
+//            compile project(':basemodule')
+//        } else {
+//            compile(name: 'basemodule-release', ext: 'aar')
+////            compile_interface(getProject())
+////            compile dep.picasso
+////            compile dep.recyclerView
+////            compile dep.appcompatV7
+////            compile dep.supportAnnotations
+////            compile dep.design
+////            compile dep.eventbus
+//
+//        }
+//    }
+//}
