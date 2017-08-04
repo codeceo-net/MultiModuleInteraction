@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'AndResGuard'
 
 android {
     compileSdkVersion 26
@@ -19,6 +19,30 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+andResGuard {
+    // mappingFile = file("./resource_mapping.txt")
+    mappingFile = null
+    use7zip = true
+    useSign = true
+    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+    whiteList = [
+            // for your icon
+            "R.drawable.icon"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "resources.arsc"
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.1.14'
+        //path = "/usr/local/bin/7za"  --- Linux
+        //path = "D:\7za\7za.exe" --- Windows
     }
 }
 

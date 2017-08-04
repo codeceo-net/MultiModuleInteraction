@@ -1,7 +1,76 @@
 apply plugin: 'com.android.application'
 apply from: rootProject.file('module.gradle')
 apply from: 'update-aar.gradle'
-//apply plugin: 'AndResGuard'
+apply plugin: 'AndResGuard'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.3'
+    }
+}
+
+andResGuard {
+    // mappingFile = file("./resource_mapping.txt")
+    mappingFile = null
+    use7zip = true
+    useSign = true
+    // it will keep the origin path of your resources when it's true
+    keepRoot = false
+    whiteList = [
+            // your icon
+            "R.drawable.icon",
+            // for fabric
+            "R.string.com.crashlytics.*",
+            // for umeng update
+            "R.string.umeng*",
+            "R.string.UM*",
+            "R.string.tb_*",
+            "R.string.rc_*",
+            "R.layout.umeng*",
+            "R.layout.tb_*",
+            "R.layout.rc_*",
+            "R.drawable.umeng*",
+            "R.drawable.tb_*",
+            "R.drawable.rc_*",
+            "R.drawable.u1*",
+            "R.drawable.u2*",
+            "R.anim.umeng*",
+            "R.color.umeng*",
+            "R.color.tb_*",
+            "R.color.rc_*",
+            "R.style.*UM*",
+            "R.style.umeng*",
+            "R.style.rc_*",
+            "R.id.umeng*",
+            "R.id.rc_*",
+            // umeng share for sina
+            "R.drawable.sina*",
+            // for google-services.json
+            "R.string.google_app_id",
+            "R.string.gcm_defaultSenderId",
+            "R.string.default_web_client_id",
+            "R.string.ga_trackingId",
+            "R.string.firebase_database_url",
+            "R.string.google_api_key",
+            "R.string.google_crash_reporting_api_key",
+            "R.dimen.rc_*"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+            "resources.arsc"
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.3'
+    }
+}
+
 
 android {
     compileSdkVersion 26
@@ -38,107 +107,73 @@ dependencies {
     compile_interface(getProject())
 }
 
-//andResGuard {
-//    mappingFile = null
-//    use7zip = true
-//    useSign = true
-//    keepRoot = false
-//    whiteList = [
-//            //for your icon
-//            "R.drawable.ic_launcher",
-//            //for fabric
-//            "R.string.com.crashlytics.*",
-//            //for umeng update
-//            "R.string.umeng*",
-//            "R.string.UM*",
-//            "R.string.tb_*",
-//            "R.layout.umeng*",
-//            "R.layout.tb_*",
-//            "R.drawable.umeng*",
-//            "R.drawable.tb_*",
-//            "R.anim.umeng*",
-//            "R.color.umeng*",
-//            "R.color.tb_*",
-//            "R.style.*UM*",
-//            "R.style.umeng*",
-//            "R.id.umeng*",
-//            // for google-services.json
-//            "R.string.google_app_id",
-//            "R.string.gcm_defaultSenderId",
-//            "R.string.default_web_client_id",
-//            "R.string.ga_trackingId",
-//            "R.string.firebase_database_url",
-//            "R.string.google_api_key",
-//            "R.string.google_crash_reporting_api_key",
-//            //umeng share for sina
-//            "R.drawable.sina*",
-//
-//            //有抛异常说这个资源找不到，避免混淆
-//            "R.layout.fragment_menu"
-//    ]
-//    compressFilePattern = [
-//            "*.png",
-//            "*.jpg",
-//            "*.jpeg",
-//            "*.gif",
-//            "resources.arsc"
-//    ]
-//    sevenzip {
-////        artifact = 'com.tencent.mm:SevenZip:1.1.8'
-//        artifact = 'com.tencent.mm:SevenZip:1.1.9'
-//        //path = "D:\\Program Files\\7-Zip\\7z.exe"
-//    }
-//}
 
 
-//def compile_submodule(Project projectModule){
-//    println "compile_submodule-----------"
-//
-//    projectModule.dependencies{
-//        if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
-//            compile project(':submodule')
-//            println "compile-----------submodule"
-//        } else {
-//            compile(name: 'submodule-release', ext: 'aar')
-//            println "compile-----------submodule-release.aar"
-//        }
-//    }
-//}
-//def compile_submodule2(Project projectModule){
-//    projectModule.dependencies{
-//        if (isAllDebug.toBoolean() || isSubmodule2Debug.toBoolean()) {
-//            compile project(':submodule2')
-//        } else {
-//            compile(name: 'submodule2-release', ext: 'aar')
-//        }
-//    }
-//}
-//def compile_interface(Project projectModule){
-//    projectModule.dependencies{
-//        if (isAllDebug.toBoolean() || isInterfaceDebug.toBoolean()) {
-//            compile project(':interface')
-//        } else {
-//            compile(name: 'interface-release', ext: 'aar')
-//        }
-//    }
-//}
-//
-//
-//
-//def compile_spacebase(Project projectModule){
-//    projectModule.dependencies{
-//        if (isAllDebug.toBoolean() || isBasemoduleDebug.toBoolean()) {
-//            compile project(':basemodule')
-//        } else {
-//            compile(name: 'basemodule-release', ext: 'aar')
-////            compile_interface(getProject())
-////            compile dep.picasso
-////            compile dep.recyclerView
-////            compile dep.appcompatV7
-////            compile dep.supportAnnotations
-////            compile dep.design
-////            compile dep.eventbus
-//
-//        }
-//    }
-//}
+/**
+ * gradlew  compressApp
+ * 对包进行微信资源压缩
+ */
+task compressApp << {
+    //清理build目录，可不加
+//    delete rootProject.buildDir
+    //遍历apk文件
+    new File("./outapk/archives").eachFile {
+        if (it.name.endsWith(".apk")) {
+            println "**************${it.name}******************"
+
+
+            if (it.name.contains("buildVersion")
+                    || it.name.contains("dev")) {
+                compressSpacePlus.call(it.name)
+            } else if (it.name.contains("xu")) {
+                compressXu.call(it.name)
+            }else if (it.name.contains("_cn")) {
+                compressCleanCn.call(it.name)
+            } else if (it.name.contains("hawkGP")) {
+                compress.call(it.name)
+            } else if(it.name.contains("usercare")||it.name.contains("spreadapps")
+                    ||it.name.contains("fota") || it.name.contains("phoneGuardGP") || it.name.contains("silentapps")){
+                compressPhoneGuard.call(it.name)
+            } else if (it.name.contains("tracker") || it.name.contains("miePreload")) {
+                compressTctPhoneGuard.call(it.name)
+            }else if (it.name.contains("cleanerAndroid")) {
+                compressCleanAndroid.call(it.name)
+            }else {
+                compress.call(it.name)
+            }
+            println "********${it.name}压缩完成***********"
+        }
+    }
+    println "压缩完成"
+}
+
+/**
+ * 压缩APK 包名不带hawk
+ */
+def compressSpacePlus = {
+    name ->
+        //减去.apk
+        def path = name.substring(0, name.length() - 4)
+        def guardJarFile = file('./AndResGuard/AndResGuard-cli-1.1.10.jar')
+        def guardConfigFile = file('./AndResGuard/config_space.xml')
+        def originApkFile = file("./outapk/archives/${name}")
+        def outputDir = file("./build/${path}")
+        // 开始执行压缩命令
+        def proc = """java -jar ${guardJarFile} ${originApkFile} -config ${guardConfigFile}
+                    -out ${outputDir} -zipalign  $SDK_DIR/build-tools/23.0.2/zipalign""".execute()
+        proc.waitFor()
+        if (proc.exitValue() == 0) {
+            println "压缩开始:\t\n${proc.in.text}"
+            def preApk = Math.round(originApkFile.length() / 1024*100)/100
+            println "压缩前：${preApk}K"
+            outputDir.eachFile {
+                if (it.name.contains("7zip_aligned")) {
+                    def afterApk = Math.round(it.length() / 1024*100)/100
+                    println "压缩后：${afterApk}K"
+                    copyApk.call(it.getAbsolutePath(), name)
+                }
+            }
+        } else {
+            println "错误日志：\n${proc.err.text}"
+        }
+}
