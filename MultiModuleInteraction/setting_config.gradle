@@ -18,10 +18,10 @@ if (isBasemoduleDebug.toBoolean() || isAllDebug.toBoolean()) {
     include ':basemodule'
 }
 if (isSubmoduleDebug.toBoolean() || isAllDebug.toBoolean()) {
-    include ':submodule'
+    include ':boost'
 }
 if (isSubmodule2Debug.toBoolean() || isAllDebug.toBoolean()) {
-    include ':submodule2'
+    include ':antivirus'
 }
 if (isInterfaceDebug.toBoolean() || isAllDebug.toBoolean()) {
     include ':interface'

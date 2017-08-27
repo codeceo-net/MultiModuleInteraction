@@ -14,27 +14,27 @@ def initModuleCompile() {
 initModuleCompile()
 
 ext{
-    compile_submodule = this.&compile_submodule
-    compile_submodule2 = this.&compile_submodule2
+    compile_boost = this.&compile_boost
+    compile_antivirus = this.&compile_antivirus
     compile_interface = this.&compile_interface
     compile_spacebase = this.&compile_spacebase
 }
 
-def compile_submodule(Project projectModule){
+def compile_boost(Project projectModule){
     projectModule.dependencies{
         if (isAllDebug.toBoolean() || isSubmoduleDebug.toBoolean()) {
-            compile project(':submodule')
+            compile project(':boost')
         } else {
-            compile(name: 'submodule-release', ext: 'aar')
+            compile(name: 'boost-release', ext: 'aar')
         }
     }
 }
-def compile_submodule2(Project projectModule){
+def compile_antivirus(Project projectModule){
     projectModule.dependencies{
         if (isAllDebug.toBoolean() || isSubmodule2Debug.toBoolean()) {
-            compile project(':submodule2')
+            compile project(':antivirus')
         } else {
-            compile(name: 'submodule2-release', ext: 'aar')
+            compile(name: 'antivirus-release', ext: 'aar')
         }
     }
 }

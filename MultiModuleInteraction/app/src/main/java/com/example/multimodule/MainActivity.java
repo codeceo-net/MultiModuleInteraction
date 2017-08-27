@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.submodule.SubModuleActivity;
-import com.example.submodule2.SubModule2Activity;
+import com.example.boost.BoostActivity;
+import com.example.antivirus.AntivirusActivity;
 
 
 public class MainActivity extends Activity {
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(MainActivity.this, SubModuleActivity.class));
+               startActivity(new Intent(MainActivity.this, BoostActivity.class));
             }
         });
         Log.d("gaolei","111");
@@ -33,6 +33,6 @@ public class MainActivity extends Activity {
     }
 
     public void skipToSubModule2(View view) {
-        startActivity(new Intent(this, SubModule2Activity.class));
+        startActivity(new Intent(this, AntivirusActivity.class));
     }
 }

@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MultiModuleInteraction.iml" filepath="$PROJECT_DIR$/MultiModuleInteraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/antivirus/antivirus.iml" filepath="$PROJECT_DIR$/antivirus/antivirus.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basemodule/basemodule.iml" filepath="$PROJECT_DIR$/basemodule/basemodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boost/boost.iml" filepath="$PROJECT_DIR$/boost/boost.iml" />
       <module fileurl="file://$PROJECT_DIR$/interface/interface.iml" filepath="$PROJECT_DIR$/interface/interface.iml" />
     </modules>
   </component>

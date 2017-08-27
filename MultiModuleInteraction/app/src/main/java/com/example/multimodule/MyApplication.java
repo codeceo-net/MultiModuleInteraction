@@ -5,7 +5,7 @@ import com.example.aninterface.module.submodule2.Submodule2DelegateConsts;
 import com.example.aninterface.module.app.AppDelegateConsts;
 import com.example.basemodule.BaseApplication;
 import com.example.multimodule.delegateimp.AppDelegateFactory;
-import com.example.submodule.delegateimp.SubmoduleDelegateFactory;
+import com.example.boost.delegateimp.SubmoduleDelegateFactory;
 
 /**
  * Created by Administrator on 2017/7/10.
