@@ -4,6 +4,7 @@ import com.example.aninterface.delegate.ModuleDelegate;
 import com.example.aninterface.module.app.AppDelegateConsts;
 import com.example.aninterface.module.boost.BoostDelegateConsts;
 import com.example.basemodule.BaseApplication;
+import com.example.boost.delegateimp.BoostDelegateFactory;
 import com.example.multimodule.delegateimp.AppDelegateFactory;
 
 /**

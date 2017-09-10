@@ -14,7 +14,7 @@ public class BoostActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submodule);
+        setContentView(R.layout.activity_boost);
     }
     public void runStaticAction(View view){
 

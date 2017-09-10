@@ -9,7 +9,7 @@ import com.example.aninterface.delegate.IDataDelegate;
 
 
 /**
- * @author chaohao.zhou
+ * @author gaolei
  * @Description:
  * @date 2017/1/12 14:01
  * @copyright TCL-MIG
@@ -48,7 +48,6 @@ public class GetSyncData implements IDataDelegate {
                     }
                 }.start();
             }
-
         }
         return null;
     }

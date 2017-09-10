@@ -18,7 +18,7 @@ public class AntivirusActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submodule2);
+        setContentView(R.layout.activity_antivirus);
         text=findViewById(R.id.text);
 
         IntentFilter filter=new IntentFilter("com.example.getdata");
@@ -45,7 +45,7 @@ public class AntivirusActivity extends Activity {
         try {
             bundle = new Bundle();
             //这个地方是调用Boost模块，获取异步数据
-           Bundle bundle1= ModuleDelegate.getInstance().getData(Submodule2DelegateConsts.FACTORY, Submodule2DelegateConsts.DataCode.getSyncData,bundle,AntivirusActivity.this);
+           Bundle bundle1= ModuleDelegate.getInstance().getData(BoostDelegateConsts.FACTORY, BoostDelegateConsts.DataCode.getSyncData,bundle,AntivirusActivity.this);
         } catch (Exception e) {
             e.printStackTrace();
         }

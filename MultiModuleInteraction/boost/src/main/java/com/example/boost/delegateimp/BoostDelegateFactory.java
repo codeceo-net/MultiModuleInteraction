@@ -19,7 +19,7 @@ public class BoostDelegateFactory implements IDelegateFactory {
 
             case BoostDelegateConsts.DataCode.getTotalMemoryByte:
                 return new GetTotalMemoryByte();
-            case Submodule2DelegateConsts.DataCode.getSyncData:
+            case BoostDelegateConsts.DataCode.getSyncData:
                 return new GetSyncData();
 
         }
