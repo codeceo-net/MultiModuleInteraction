@@ -16,13 +16,13 @@ public class GetTotalMemoryByte implements IDataDelegate {
 
     @Override
     public Bundle getData(Bundle args, Object... extras) throws DelegateException {
-        Bundle result = null;
+        Bundle bundle = null;
         try {
-            result = new Bundle();
-            result.putString("result", "123");
+            bundle = new Bundle();
+            bundle.putString("result", "这是一条获取的数据从Boost模块");
         } catch (Throwable e) {
 
         }
-        return result;
+        return bundle;
     }
 }

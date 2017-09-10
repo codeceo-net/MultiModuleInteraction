@@ -10,14 +10,14 @@
         android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳转到SubModule"
+        android:text="跳转到Boost"
         android:layout_marginTop="10dp"
          />
     <Button
         android:id="@+id/skip2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳转到SubModule2"
+        android:text="跳转到Antivirus"
         android:onClick="skipToSubModule2"
         android:layout_marginTop="10dp"
         />

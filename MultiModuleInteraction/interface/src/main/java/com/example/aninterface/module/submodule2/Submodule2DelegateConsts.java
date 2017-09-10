@@ -13,6 +13,7 @@ public class Submodule2DelegateConsts {
 
     public static class DataCode {
         public final static int getTotalMemoryByte = 1;
+        public final static int getSyncData = 2;
 
 
     }

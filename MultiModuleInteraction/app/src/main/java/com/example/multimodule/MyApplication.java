@@ -1,6 +1,6 @@
 package com.example.multimodule;
 
-import com.example.aninterface.delegate.CleanDelegate;
+import com.example.aninterface.delegate.ModuleDelegate;
 import com.example.aninterface.module.submodule2.Submodule2DelegateConsts;
 import com.example.aninterface.module.app.AppDelegateConsts;
 import com.example.basemodule.BaseApplication;
@@ -18,7 +18,7 @@ public class MyApplication extends BaseApplication {
         initCleanDelegate();
     }
     private void initCleanDelegate() {
-        CleanDelegate.register(AppDelegateConsts.FACTORY, new AppDelegateFactory());
-        CleanDelegate.register(Submodule2DelegateConsts.FACTORY, new SubmoduleDelegateFactory());
+        ModuleDelegate.register(AppDelegateConsts.FACTORY, new AppDelegateFactory());
+        ModuleDelegate.register(Submodule2DelegateConsts.FACTORY, new SubmoduleDelegateFactory());
     }
 }

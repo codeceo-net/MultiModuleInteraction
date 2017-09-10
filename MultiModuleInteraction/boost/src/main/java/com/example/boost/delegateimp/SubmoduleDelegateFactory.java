@@ -19,6 +19,8 @@ public class SubmoduleDelegateFactory implements IDelegateFactory {
 
             case Submodule2DelegateConsts.DataCode.getTotalMemoryByte:
                 return new GetTotalMemoryByte();
+            case Submodule2DelegateConsts.DataCode.getSyncData:
+                return new GetSyncData();
 
         }
         return null;

@@ -8,14 +8,22 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这是submodule2模块的SubModule2Activity" />
+        android:text="这是Antivirus模块的AntivirusActivity" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="getDataFromOtherModule"
         android:layout_marginTop="20dp"
-        android:text="getData" />
+        android:textAllCaps="false"
+        android:text="点击Boost模块获取数据从" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getSyncDataFromOtherModule"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:text="点击异步从Boost模块获取数据" />
 
 
 </LinearLayout>
