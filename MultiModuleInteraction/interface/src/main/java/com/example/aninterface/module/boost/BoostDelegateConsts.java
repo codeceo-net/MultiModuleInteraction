@@ -1,4 +1,4 @@
-package com.example.aninterface.module.submodule2;
+package com.example.aninterface.module.boost;
 
 /**
  * @author Davis
@@ -7,7 +7,7 @@ package com.example.aninterface.module.submodule2;
  * @copyright HAWK
  */
 
-public class Submodule2DelegateConsts {
+public class BoostDelegateConsts {
 
     public static final String FACTORY = "com.submodule2";
 
