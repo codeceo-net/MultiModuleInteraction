@@ -9,19 +9,17 @@ import java.util.Map;
  * Created by wangdan on 17/1/7.
  */
 
-public class CleanDelegate {
+public class ModuleDelegate {
 
     private final Map<String, IDelegateFactory> factoryMap = new HashMap<>();
 
-//    private final Map<String, WeakReference<IActionDelegate>> actionTransferMap = new HashMap<>();
+    private static final ModuleDelegate mInstance = new ModuleDelegate();
 
-    private static final CleanDelegate mInstance = new CleanDelegate();
-
-    private CleanDelegate() {
+    private ModuleDelegate() {
 
     }
 
-    public static CleanDelegate getInstance() {
+    public static ModuleDelegate getInstance() {
         return mInstance;
     }
 
@@ -41,6 +39,4 @@ public class CleanDelegate {
 
         throw new DelegateException("unknow data transfer");
     }
-
-
 }

@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.aninterface.delegate.CleanDelegate;
-import com.example.aninterface.module.submodule2.Submodule2DelegateConsts;
+import com.example.aninterface.delegate.ModuleDelegate;
+import com.example.aninterface.module.boost.BoostDelegateConsts;
 
 public class AntivirusActivity extends Activity {
 
@@ -24,7 +24,7 @@ public class AntivirusActivity extends Activity {
         try {
             bundle = new Bundle();
             bundle.putString("gaolei", "beauty");
-           Bundle bundle1= CleanDelegate.getInstance().getData(Submodule2DelegateConsts.FACTORY, Submodule2DelegateConsts.DataCode.getTotalMemoryByte,bundle,AntivirusActivity.this);
+           Bundle bundle1= ModuleDelegate.getInstance().getData(BoostDelegateConsts.FACTORY, BoostDelegateConsts.DataCode.getTotalMemoryByte,bundle,AntivirusActivity.this);
             String result=bundle1.getString("result");
             text.setText(result);
         } catch (Exception e) {

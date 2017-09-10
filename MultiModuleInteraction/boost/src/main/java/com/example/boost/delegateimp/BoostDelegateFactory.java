@@ -3,7 +3,7 @@ package com.example.boost.delegateimp;
 
 import com.example.aninterface.delegate.IDataDelegate;
 import com.example.aninterface.delegate.IDelegateFactory;
-import com.example.aninterface.module.submodule2.Submodule2DelegateConsts;
+import com.example.aninterface.module.boost.BoostDelegateConsts;
 
 /**
  * @author chaohao.zhou
@@ -11,13 +11,13 @@ import com.example.aninterface.module.submodule2.Submodule2DelegateConsts;
  * @date 2017/1/12 11:18
  * @copyright TCL-MIG
  */
-public class SubmoduleDelegateFactory implements IDelegateFactory {
+public class BoostDelegateFactory implements IDelegateFactory {
 
     @Override
     public IDataDelegate getDataTransfer(int code) {
         switch (code) {
 
-            case Submodule2DelegateConsts.DataCode.getTotalMemoryByte:
+            case BoostDelegateConsts.DataCode.getTotalMemoryByte:
                 return new GetTotalMemoryByte();
 
         }
